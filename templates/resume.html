@@ -1,0 +1,86 @@
+
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Resume Category Prediction</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+
+    </head>
+
+    <body>
+        <div class="container_intro">
+            <div class="container_text">
+                <h1>Resume Screeing AI Base System</h1>
+                <p>This system supports TXT and PDF files<br> to be uploaded and it witt work on the following....</p>
+                <ul>
+                    <li>Resume Categoryization</li>
+                    <li>Resume Job Recommendation</li>
+                    <li>Resume Parsing (Information Extraction)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Upload Your Resume</h2>
+            <div class="form_container">
+                <form class="upload_form" action="/pred" method="post" enctype="multipart/form-data">
+                    <input type="file" name="resume" accept=".pdf,.txt", required>
+                    <input class="submit_btn" type="submit" value="submit">
+                </form>
+    
+                <form class="delete_output_form" action="/pred" method="post">
+                    <input class="delete_output_btn" type="submit" name="delete" value="Remove" />
+                </form>
+            </div>
+    
+            
+        </div>    
+        <div class="container_output">
+            {% if message %}
+            <p class="text-message">{{message}}</p>
+            {% endif %}
+            {% if predicted_category %}
+            <p class="Certificate_text"><b><strong>Certificate: </strong></b> {{predicted_category}}</p>
+            <p class="Certificate_job"><b><strong>Recommended Job: </strong></b> {{recommended_job}}</p>
+            <br>
+            <hr>
+            <br>
+            <h1 class="text-header">Extracted Information</h1>
+            <hr>
+            <br>
+            <p class="Personal_data"><b><strong>Name:</strong></b> {{name}}</p>
+            <p class="Personal_data"><b><strong>Phone No:</strong></b> {{phone_number}}</p>
+            <p class="Personal_data"><b><strong>Email:</strong></b> {{email}}</p>
+            <br>
+            <hr>            
+            <br>
+            {% endif %}
+
+            {% if extracted_skills %}
+            <p class="text-skills"><b><strong>Skills:</strong></b></p>
+            <ul class="list-skills">
+                {% for skill in extracted_skills %}
+                <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <br>
+            {% if extracted_education %}
+            <h1 class="text-education">Education:</h1>
+            <ul class="list-education">
+                {% for edu in extracted_education %}
+                <li>{{ edu }}</li>
+                {% endfor %}
+            </ul>
+            <br>
+            {% endif %}
+            
+            
+        </div>
+    
+    </body>
+
+
+</html>

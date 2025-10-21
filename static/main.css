@@ -1,0 +1,191 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+
+
+body{
+    font-family: sans-serif;
+    background-color: #ececec;
+    color: #333;
+}
+
+
+
+.container_intro{
+     background: 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0) 35%, rgba(44, 44, 44, 0.767) 100%), 
+        url('images/resume-photo.jpg') no-repeat center/cover;
+
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: scroll; 
+    background-position: center; 
+    height: 90vh; 
+    color: #fff;
+}
+
+.container_intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.19);
+    z-index: 1;
+}
+
+.container_text{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: auto;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.384);
+    border-radius: 7px;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+
+}
+
+.container_text h1{
+    margin: 15px 20px;
+    font-size: 40px;
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.9); /* Shadow offset and blur */
+    color: white; 
+}
+
+.container_text p{
+    margin: 15px 20px;
+    font-size: 15px;
+    color: white; 
+    text-align: left;
+    letter-spacing: 0.8px;
+    line-height: 1.4;
+}
+
+.container_text ul {
+    margin: 10px 20px 20px 20px;
+    text-align: left;
+}
+
+.container_text ul li{
+    display: block;
+}
+
+.container{
+    margin: 30px 0;
+    padding: 30px;
+    background-color: #d6d4d4e0;
+    border-radius: 4px;
+}
+
+h2{
+    margin-bottom: 20px;
+    font-style: normal;
+    text-align: center;
+}
+
+.upload_form {
+margin-top: 10px;
+
+}
+.delete_output_form{
+    margin-top: 10px;
+
+}
+
+.form_container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+.submit_btn {
+    padding: 7px 15px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: large;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit_btn:hover {
+    background-color: #45a049;
+}
+
+.delete_output_btn{
+    background-color: #d12f2f;
+    padding: 7px 15px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    font-size: small;
+}
+
+.delete_output_btn:hover{
+    background-color: #c02a2a;
+}
+
+.text-message{
+    font-size: 18px;
+    color: #910505;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.container_output{
+    margin: 30px 170px;
+    padding: 20px;
+    background-color: #c7c7c7;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.Certificate_text{
+    margin-bottom: 5px;
+}
+
+
+.text-header{
+    display: grid;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.Personal_data{
+    margin-left: 30px;
+    margin-bottom: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.text-skills, .text-education{
+    margin-top: 15px;
+    margin-bottom: 6px;
+    margin-left: 15px;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.list-skills,.list-education{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.list-skills li, .list-education li{
+    padding: 2px;
+    font-style: oblique;
+}
